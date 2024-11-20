@@ -21,7 +21,10 @@ import torch
 import torch.nn.functional as F
 import torch.utils.checkpoint
 from torch import nn
-from flash_attn import flash_attn_func
+try:
+    from flash_attn import flash_attn_func
+except:
+    pass
 
 from ... import PreTrainedModel
 from ...activations import ACT2FN
